@@ -179,6 +179,7 @@ def do_search():
     # Spisak pozicija svih kutija kad kliknemo na SEARCH
     board.blue_boxes = board.find_elements('b')
     board.orange_boxes = board.find_elements('o')
+    board.fire_position = board.find_position('f')
 
     # pokreni pretragu, meri vreme izvrsavanja
     start = time.clock()
@@ -250,7 +251,8 @@ board_to_colors = {'.': 'white',
                    'g': 'orangered',
                    'p': 'yellow',
                    'b': 'blue',
-                   'o': 'orange'}
+                   'o': 'orange',
+                   'f': 'pink'}     # Predstavlja vatru
 # mapiranje sadrzaja table na ikonicu
 board_to_icons = {'r': 'robot.png'}
 

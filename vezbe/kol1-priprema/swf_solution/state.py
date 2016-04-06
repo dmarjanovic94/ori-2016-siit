@@ -142,7 +142,9 @@ class RobotState(State):
         # Srednji zadatak B
         # self.goal_condition = True
         # Tezak zadatak A
-        self.goal_condition = len(self.picked_blue_boxes) == 3 and len(self.picked_orange_boxes) == 2
+        # self.goal_condition = len(self.picked_blue_boxes) == 3 and len(self.picked_orange_boxes) == 2
+        # Tezak zadatak B
+        self.goal_condition = True
 
     def get_agent_code(self):
         return 'r'
@@ -152,7 +154,8 @@ class RobotState(State):
         
     def get_cost(self):
         # Euklidovo rastojanje
-        return ((self.position[0] - self.goal_position[0])**2 + (self.position[1] - self.goal_position[1])**2)**0.5  
+        return ((self.position[0] - self.goal_position[0])**2 + (self.position[1] - self.goal_position[1])**2)**0.5 \
+        - ((self.position[0] - self.board.fire_position[0])**2 + (self.position[1] - self.board.fire_position[1])**2)**0.2
         
         # Menhetn udaljenost     
         # return abs(self.position[0] - self.goal_position[0]) + abs(self.position[1] - self.goal_position[1])

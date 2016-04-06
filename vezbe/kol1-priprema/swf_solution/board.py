@@ -10,7 +10,8 @@ class Board:
         self.rows = rows  # broj redova
         self.cols = cols  # broj kolona
         self.blue_boxes = []    # spisak svih plavih kutija
-        self.orange_boxes = []  # spisak svih narandzastih kutija 
+        self.orange_boxes = []  # spisak svih narandzastih kutija
+        self.fire_position = None # Polje sa vatrom 
 
         # ---------------
         # . = empty
@@ -27,7 +28,8 @@ class Board:
                       'g',
                       'p',
                       'b',
-                      'o']
+                      'o',
+                      'f']
         self.data = [['.'] * cols for _ in range(rows)]
         self.text = [[''] * cols for _ in range(rows)]
 
